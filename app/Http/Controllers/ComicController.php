@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
