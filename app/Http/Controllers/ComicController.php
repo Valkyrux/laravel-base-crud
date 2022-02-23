@@ -14,7 +14,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $comics = Comic::orderBy('created_at', 'DESC')->paginate(10);
+        return view('admin.index', compact('comics'));
     }
 
     /**
@@ -38,7 +39,7 @@ class ComicController extends Controller
         $a_comic = new Comic();
         $a_comic->fill($request->all());
         $a_comic->save();
-        redirect();
+        return redirect()->route('comics.show', $a_comic);
     }
 
     /**
@@ -49,7 +50,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('admin.show', compact('comic'));
     }
 
     /**

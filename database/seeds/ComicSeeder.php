@@ -13,7 +13,7 @@ class ComicSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 4; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $a_comic = new Comic();
             $array_fill = [
                 'title' => $faker->word(),
