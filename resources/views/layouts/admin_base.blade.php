@@ -18,14 +18,14 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="{{route('comics.index')}}">Home</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{{route('comics.index')}}">All Comics</a>
+              <li class="nav-item">
+                <a class="nav-link {{(Route::currentRouteName() === 'home')?'text-primary fw-bold':''}}" href="{{route('home')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('comics.create')}}">Add a Comic</a>
+                <a class="nav-link {{(Route::currentRouteName() === 'comics.index')?'text-primary fw-bold':''}}" href="{{route('comics.index')}}">All Comics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{(Route::currentRouteName() === 'comics.create')?'text-primary fw-bold':''}}" href="{{route('comics.create')}}">Add a Comic</a>
               </li>
             </ul>
           </div>

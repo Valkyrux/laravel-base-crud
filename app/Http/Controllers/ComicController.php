@@ -82,4 +82,11 @@ class ComicController extends Controller
     {
         //
     }
+
+    // my function for home page
+
+    public function home()
+    {
+        return view('admin.home');
+    }
 }

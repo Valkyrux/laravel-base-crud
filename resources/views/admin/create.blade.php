@@ -8,7 +8,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="{{route('comics.store')}}">
+                <form action="{{route('comics.store')}}" method="POST">
+                    @csrf
+                    @method('POST')
                     <div class="form-group mb-3">
                       <label for="title">Title:</label>
                       <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
