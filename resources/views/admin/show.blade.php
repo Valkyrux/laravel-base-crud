@@ -16,7 +16,7 @@
           <h6><span class="text-primary">Artists: </span>{{$comic->artists}}</h6>
           <p class="card-text">{{$comic->description}}</p>
           <h6><span class="text-primary">Price: </span>{{$comic->price}}&dollar;</h6>
-          <a href="{{url()->previous()}}" class="btn btn-success">Back</a>
+          <a href="{{url()->previous()}}" class="btn btn-primary">Back</a>
         </div>
       </div>
     </div>
