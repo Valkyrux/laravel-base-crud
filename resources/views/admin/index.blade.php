@@ -8,6 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <h1 class="fs-4 text-secondary">All Comics</h1>
                 <table class="table bg-light rounded-3 overflow-hidden">
                     <thead>
                       <tr>

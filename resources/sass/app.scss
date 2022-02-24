@@ -5,3 +5,12 @@ nav {
     justify-content: center;
     padding: 20px 0;
 }
+
+label {
+    color: $secondary;
+}
+
+.form-control {
+    background-color: transparent;
+    color: white;
+}

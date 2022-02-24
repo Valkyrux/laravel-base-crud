@@ -10,7 +10,7 @@
             <div class="col-12 text-center text-secondary">
                 <h1 class="fs-4">
                     Welcome! <br>
-                    Here you can view all comics and add a new one!
+                    Here you can view all comics, edit an existing comic and add a new one!
                 </h1>
             </div>
         </div>

@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::orderBy('updated_at', 'DESC')->paginate(10);
+        $comics = Comic::orderBy('updated_at', 'DESC')->paginate(8);
         return view('admin.index', compact('comics'));
     }
 
