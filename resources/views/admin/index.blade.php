@@ -27,8 +27,8 @@
                             <td>{{$comic->title}}</td>
                             <td>{{$comic->image}}</td>
                             <td>{{$comic->edition}}</td>
-                            <td>{{date_format($comic->created_at, "d/M/Y H:i")}}</td>
-                            <td>{{date_format($comic->updated_at, "d/M/Y H:i")}}</td>
+                            <td>{{date('d/M/Y H:i',strtotime('+1 hour',strtotime($comic->created_at)))}}</td>
+                            <td>{{date('d/M/Y H:i',strtotime('+1 hour',strtotime($comic->updated_at)))}}</td>
                             <td>
                                 <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning">Edit</a>
                                 <a href="{{route('comics.show', $comic)}}" class="btn btn-primary">Show</a>
