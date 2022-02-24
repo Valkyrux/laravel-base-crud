@@ -1,4 +1,4 @@
-@extends('layouts.admin_base')
+@extends('admin.layouts.base')
 
 @section('page_title')
     {{Route::currentRouteName()}}
