@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::orderBy('created_at', 'DESC')->paginate(10);
+        $comics = Comic::orderBy('updated_at', 'DESC')->paginate(10);
         return view('admin.index', compact('comics'));
     }
 
@@ -61,7 +61,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('admin.edit', compact('comic'));
     }
 
     /**
@@ -73,7 +73,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $comic->fill($request->all());
+        $comic->save();
+        return redirect()->route('comics.show', $comic);
     }
 
     /**

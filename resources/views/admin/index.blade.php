@@ -8,19 +8,35 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                @foreach ($comics as $comic)
-                <div class="card row flex-row">
-                    <img class="col-3" src="{{$comic->image}}" alt="{{$comic->title}}">
-                    <div class="card-body col-9">
-                      <h5 class="card-title"><span class="text-primary">Title: </span>{{$comic->title}}</h5>
-                      <h6><span class="text-primary">Authors: </span>{{$comic->authors}}</h6>
-                      <h6><span class="text-primary">Artists: </span>{{$comic->artists}}</h6>
-                      <p class="card-text">{{$comic->description}}</p>
-                      <h6><span class="text-primary">Price: </span>{{$comic->price}}&dollar;</h6>
-                      <a href="{{route('comics.show', $comic)}}" class="btn btn-primary">Show</a>
-                    </div>
-                  </div>
-                @endforeach
+                <table class="table bg-light rounded-3 overflow-hidden">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Image URL</th>
+                        <th scope="col">Edition</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Updated at</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       @foreach ($comics as $comic)
+                        <tr>
+                            <th scope="row">{{$comic->id}}</th>
+                            <td>{{$comic->title}}</td>
+                            <td>{{$comic->image}}</td>
+                            <td>{{$comic->edition}}</td>
+                            <td>{{date_format($comic->created_at, "d/M/Y H:i")}}</td>
+                            <td>{{date_format($comic->updated_at, "d/M/Y H:i")}}</td>
+                            <td>
+                                <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('comics.show', $comic)}}" class="btn btn-primary">Show</a>
+                            </td>
+                         </tr>
+                        @endforeach
+                      </tbody>
+                  </table>
             </div>
             {{$comics->links()}}
         </div>
