@@ -41,6 +41,7 @@
                       <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{{url()->previous()}}" class="btn btn-success">Back</a>
                   </form>
             </div>
         </div>
